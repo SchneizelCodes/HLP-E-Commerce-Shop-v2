@@ -3,88 +3,29 @@
 # Enable Rewrite Engine
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  
-  # Set base URL
   RewriteBase /
   
-  # Redirect HTTP to HTTPS (uncomment if your domain has SSL)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-  
-  # Remove trailing slashes (except for directories)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} /$
-  RewriteRule ^(.+)/ $1 [L,R=301]
-  
-  # Handle SPA routing - rewrite all requests to index.html
-  # but exclude actual files and directories
+  # Do not rewrite files or directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Rewrite everything else to index.html for SPA routing
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
 
-# Enable Gzip Compression
+# Enable Gzip Compression (optional)
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
   AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
-  AddOutputFilterByType DEFLATE application/xml+rss application/rss+xml font/truetype font/opentype
-  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject image/svg+xml
+  AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
-# Browser Caching
-<IfModule mod_expires.c>
-  ExpiresActive On
-  
-  # Cache busting for versioned assets (use default long-term)
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType text/css "access plus 1 year"
-  ExpiresByType application/x-woff "access plus 1 year"
-  ExpiresByType application/x-woff2 "access plus 1 year"
-  ExpiresByType font/truetype "access plus 1 year"
-  ExpiresByType font/opentype "access plus 1 year"
-  
-  # Cache index.html for shorter duration
-  ExpiresByType text/html "access plus 1 day"
-  
-  # Default cache
-  ExpiresDefault "access plus 2 days"
-</IfModule>
 
-# Set proper headers
-<IfModule mod_headers.c>
-  # Security headers
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set X-XSS-Protection "1; mode=block"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  
-  # Cache control for HTML files
-  <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "max-age=86400, public"
-  </FilesMatch>
-  
-  # Cache control for static assets
-  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|webp|svg|woff|woff2|ttf|otf)$">
-    Header set Cache-Control "max-age=31536000, public, immutable"
-  </FilesMatch>
-</IfModule>
 
 # Disable directory listing
 Options -Indexes
 
-# Prevent access to sensitive files
-<FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
-
-<FilesMatch "\.(env|json|md)$">
-  Order allow,deny
+# Prevent direct access to sensitive files
+<FilesMatch "\.(env|json|md|lock)$">
   Deny from all
 </FilesMatch>
