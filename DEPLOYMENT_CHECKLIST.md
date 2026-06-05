@@ -1,4 +1,4 @@
-# EasyChoose Deployment Checklist
+# HealthyLifePhil Deployment Checklist
 
 Use this checklist to ensure a smooth deployment to Hostinger.
 
@@ -64,7 +64,7 @@ Use this checklist to ensure a smooth deployment to Hostinger.
 Visit your live website and test:
 
 - [ ] Home page loads
-- [ ] Logo and branding correct (EC / EasyChoose)
+- [ ] Logo and branding correct (HLP / HealthyLifePhil)
 - [ ] Navigation menu works
 - [ ] Sidebar opens/closes
 - [ ] Category dropdown works

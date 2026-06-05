@@ -68,7 +68,7 @@ export function Register() {
         <div className="bg-white p-8 md:p-12 shadow-sm">
           <div className="text-center mb-8">
             <h2 className="text-3xl mb-2">Create Your Account</h2>
-            <p className="text-gray-600">Join EasyChoose and start shopping today</p>
+            <p className="text-gray-600">Join HealthyLifePhil and start shopping today</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

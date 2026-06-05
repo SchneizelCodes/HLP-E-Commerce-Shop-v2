@@ -82,5 +82,10 @@
     "react-dom": {
       "optional": true
     }
+    {
+  "compilerOptions": {
+    "types": ["vite/client"]
+  }
+}
   }
 }

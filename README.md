@@ -1,4 +1,4 @@
-# EasyChoose E-Commerce Platform
+# HealthyLifePhil E-Commerce Platform
 
 A modern e-commerce website for health and relaxation products, featuring massage chairs and mechanical ponies.
 
@@ -50,7 +50,7 @@ This generates a `dist` folder ready for deployment.
 ## Project Structure
 
 ```
-easychoose/
+healthylifephil/
 ├── src/
 │   ├── app/
 │   │   ├── components/
@@ -206,6 +206,6 @@ For issues related to:
 
 ---
 
-**Project**: EasyChoose  
+**Project**: HealthyLifePhil  
 **Version**: 0.0.1  
 **Last Updated**: June 2026

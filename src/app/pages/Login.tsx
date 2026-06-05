@@ -45,7 +45,7 @@ export function Login() {
         <div className="bg-white p-8 shadow-sm">
           <div className="text-center mb-8">
             <h2 className="text-3xl mb-2">Welcome Back</h2>
-            <p className="text-gray-600">Sign in to your EasyChoose account</p>
+            <p className="text-gray-600">Sign in to your HealthyLifePhil account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

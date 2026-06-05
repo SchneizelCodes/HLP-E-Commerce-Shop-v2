@@ -108,9 +108,9 @@ export function Layout() {
             <div className="flex items-center gap-3 flex-shrink-0">
               <Link to="/" className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-black flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">EC</span>
+                  <span className="text-white text-xs font-bold">HLP</span>
                 </div>
-                <span className="font-semibold hidden sm:inline">EasyChoose</span>
+                <span className="font-semibold hidden sm:inline">HealthyLifePhil</span>
               </Link>
               <button
                 onClick={() => setIsSidebarOpen(true)}
@@ -226,7 +226,7 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-semibold mb-4">EasyChoose</h3>
+              <h3 className="font-semibold mb-4">HealthyLifePhil</h3>
               <p className="text-sm text-gray-600">
                 Where digital meets fashion
               </p>
@@ -257,7 +257,7 @@ export function Layout() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-            <p>&copy; 2026 EasyChoose. All rights reserved.</p>
+            <p>&copy; 2026 HealthyLifePhil. All rights reserved.</p>
           </div>
         </div>
       </footer>

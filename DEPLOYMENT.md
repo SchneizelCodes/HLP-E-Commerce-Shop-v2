@@ -1,6 +1,6 @@
-# EasyChoose Deployment Guide for Hostinger
+# HealthyLifePhil Deployment Guide for Hostinger
 
-This guide will help you deploy your EasyChoose e-commerce website to Hostinger.
+This guide will help you deploy your HealthyLifePhil website to Hostinger.
 
 ## Prerequisites
 
