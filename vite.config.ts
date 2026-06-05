@@ -33,4 +33,41 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+  
+  // Build configuration for production
+  build: {
+    // Output directory
+    outDir: 'dist',
+    // Clear outDir before building
+    emptyOutDir: true,
+    // Source map for production (set to false to reduce bundle size)
+    sourcemap: false,
+    // Chunk size warning threshold (in kb)
+    chunkSizeWarningLimit: 1000,
+    // Minify with esbuild (default)
+    minify: 'esbuild',
+    // Rollup options for optimization
+    rollupOptions: {
+      output: {
+        // Generate named chunks for better caching
+        manualChunks: {
+          'vendor': [
+            'react',
+            'react-dom',
+            'react-router',
+          ],
+          'ui': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-alert-dialog',
+          ],
+          'mui': [
+            '@mui/material',
+            '@mui/icons-material',
+          ],
+        },
+      },
+    },
+  },
 })
+

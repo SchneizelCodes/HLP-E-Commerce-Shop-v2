@@ -1,6 +1,6 @@
-import { projectId, publicAnonKey } from './info.tsx';
+import { projectId, publicAnonKey, supabaseFunctionUrl } from '../../../utils/supabase/info';
 
-const API_URL = `https://${projectId}.supabase.co/functions/v1/make-server-c776dae1`;
+const API_URL = supabaseFunctionUrl;
 
 export interface SignUpData {
   email: string;
