@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-all --unstable-crons supabase functions serve"
+  },
+  "imports": {
+    "std/": "https://deno.land/std@0.208.0/",
+    "hono/": "https://deno.land/x/hono@v4.0.0/"
+  }
+}
