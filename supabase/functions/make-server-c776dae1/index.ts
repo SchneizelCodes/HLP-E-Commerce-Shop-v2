@@ -42,13 +42,18 @@ app.use(
   }),
 );
 
-// Health check endpoint
-app.get("/make-server-c776dae1/health", (c) => {
-  return c.json({ status: "ok" });
+// Health check endpoint (public)
+app.get("/health", (c) => {
+  try {
+    return c.json({ status: "ok" });
+  } catch (error) {
+    console.log("Health check error:", error);
+    return c.json({ status: "ok" }, 200);
+  }
 });
 
 // User signup endpoint
-app.post("/make-server-c776dae1/signup", async (c) => {
+app.post("/signup", async (c) => {
   try {
     const { email, password, firstName, lastName } = await c.req.json();
 
@@ -91,7 +96,7 @@ app.post("/make-server-c776dae1/signup", async (c) => {
 });
 
 // User login endpoint
-app.post("/make-server-c776dae1/login", async (c) => {
+app.post("/login", async (c) => {
   try {
     const { email, password } = await c.req.json();
 
@@ -137,7 +142,7 @@ app.post("/make-server-c776dae1/login", async (c) => {
 });
 
 // Check authentication status
-app.get("/make-server-c776dae1/me", async (c) => {
+app.get("/me", async (c) => {
   try {
     const authHeader = c.req.header('Authorization');
     const accessToken = authHeader?.split(' ')[1];
