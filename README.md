@@ -1,15 +1,6 @@
 # HealthyLifePhil E-Commerce Platform
 
-A modern e-commerce website for health and relaxation products, featuring massage chairs and mechanical ponies.
-
-## Features
-
-- 🏠 **Home Page** with auto-rotating carousel
-- 🔐 **User Authentication** (Register/Login) powered by Supabase
-- 🛒 **Product Categories** (Massage Chair, Mechanical Pony)
-- 🔍 **Search Functionality** with live results
-- 📱 **Responsive Design** for all devices
-- 🎨 **Modern UI** with Tailwind CSS
+https://hlpshop.vercel.app
 
 ## Tech Stack
 
